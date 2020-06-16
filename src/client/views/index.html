@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+  <title>Capstone Project-Travel App</title>
+</head>
+
+<body>
+  <div class=header>
+    <h3>Travel App - Begin Your Journey</h3>
+  </div>
+  <div id="flex-container">
+
+    <div class="column">
+      <img id="pix-image" class="responsive" src="../media/img_snow.jpg" alt="Snow" width="500" height="333">
+      <h3 id="todo-notes-button">+ add notes</h3>
+      <div id="todolist"></div>
+    </div>
+    <div class="column">
+      <form>
+        <div class="row">
+          <div class="label-col">
+            <label for="destination">Destination: </label>
+          </div>
+          <div class="input-col">
+            <input type="text" id="destination" name="destination" placeholder="Please enter country/city">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="label-col">
+            <label for="travelDate">Departure: </label>
+          </div>
+          <div class="input-col">
+            <input type="date" id="travelDate" name="travelDate" placeholder="Departure Date">
+            <div id="errorMsg"></div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="generate-btns">
+            <button type="submit" id="submitBtn">Submit Trip</button>
+            <button type="submit">Remove Trip</button>
+          </div>
+
+        </div>
+
+      </form>
+
+
+      <div id="tripDetails" class="hidden">
+        <div class="resultContainer">
+          <h1>My trip to: </h1>
+          <p>
+          <h1 id="destinationName"> </h1>
+          <h1 id="countDays"></h1>
+          </p>
+        </div><br />
+
+        <h2>Typical weather for then is :</h2>
+        <div id="weatherForecast"></div><br />
+      </div>
+
+
+    </div>
+
+    <script>
+      // check that service workers are supported
+      if ('serviceWorker' in navigator) {
+        // use the window load method to keep the page load performant
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('sw.js');
+        });
+      }
+    </script>
+</body>
+
+</html>

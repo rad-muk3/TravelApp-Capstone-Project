@@ -1,0 +1,60 @@
+@import 'colors';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  margin: 20px;
+  padding: 20px;
+  text-align: center;
+  background: $header-color;
+  color: $text-color-primary;
+  font-size: 16px;
+}
+
+#flex-container {
+  display: flex;
+  background-color: $background-color;
+  justify-content: space-around;
+  border-radius: 3px;
+  padding: 20px;
+}
+
+.column {
+  float: left;
+  width: 45%;
+  padding: 15px;
+  line-height: 2;
+}
+/* Clear floats after image containers */
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+// Display for smaller screens
+@media (max-width: 730px) {
+  header {
+    margin: auto;
+  }
+
+  .column {
+    width: 45%;
+  }
+
+  .responsive {
+    max-width: 400px;
+    height: auto;
+  }
+
+  #flex-container {
+    display: flex;
+    width: 500px;
+    padding: 20px;
+    height: auto;
+  }
+}

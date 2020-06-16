@@ -1,0 +1,18 @@
+@import "base";
+
+.resultContainer h1,
+.resultContainer p {
+  display: inline;
+  vertical-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  line-height: 25px;
+}
+
+p {
+  padding: 15px;
+}
+
+.resultContainer h1 {
+  font-weight: bold;
+}

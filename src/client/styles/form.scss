@@ -1,0 +1,120 @@
+@import "colors";
+@import 'base';
+@import 'output';
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid $border-color;
+  border-radius: 2rem;
+  margin: 15px;
+  padding: 5rem;
+
+  input[type=text] {
+    width: 100%;
+    margin: 30px;
+    padding: 25px;
+    border: 1px solid $border-color;
+    border-radius: 4px;
+    resize: vertical;
+  }
+
+  input[type=date] {
+    border: 1px solid $border-color;
+    outline: none;
+    width: 100%;
+    padding: 25px 30px 20px;
+    border-radius: 5px;
+    color: $text-color-primary;
+    background-color: $header-color;
+
+    &:focus {
+      //background-color: #4F4F4F;
+      background-color: $background-color;
+      color: $text-color-secondary;
+    }
+  }
+
+  label {
+    padding: 20px 20px 20px 0;
+    display: inline-block;
+  }
+
+  input[type=submit] {
+    background-color: $button-color-primary;
+    color: $text-color-primary;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+  }
+
+  input[type=submit]:hover {
+    background-color: $button-hover-color;
+  }
+
+  .label-col {
+    float: left;
+    width: 35%;
+    margin-top: 10px;
+  }
+
+  .input-col {
+    float: left;
+    width: 65%;
+    margin-top: 25px;
+  }
+
+  .generate-btns {
+    width: 25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  button {
+    border: none;
+    outline: 2px #333333 solid;
+    background-color: $button-color-primary;
+    color: $text-color-primary;
+    border-radius: 2px;
+    padding: 5px;
+    margin-top: 2rem;
+    max-width: 10rem;
+    cursor: pointer;
+  }
+}
+
+.hidden {
+  display: none;
+}
+@media (max-width: 730px) {
+  .label-col {
+    width: 100%;
+    margin: auto;
+  }
+
+  .input-col {
+    width: 100%;
+    margin: auto;
+  }
+
+  input[type=text] {
+    width: fit-content;
+  }
+
+  input[type=date] {
+    width: 100px;
+  }
+
+  form {
+    border: 1px solid $border-color;
+    margin-top: 400px;
+    margin-left: -250px;
+    width: 450px;
+    height: auto;
+  }
+}
