@@ -31,7 +31,6 @@ form {
     background-color: $header-color;
 
     &:focus {
-      //background-color: #4F4F4F;
       background-color: $background-color;
       color: $text-color-secondary;
     }
@@ -50,10 +49,6 @@ form {
     border-radius: 4px;
     cursor: pointer;
     float: right;
-  }
-
-  input[type=submit]:hover {
-    background-color: $button-hover-color;
   }
 
   .label-col {
@@ -85,6 +80,10 @@ form {
     margin-top: 2rem;
     max-width: 10rem;
     cursor: pointer;
+
+    &:hover {
+      background-color: $button-hover-color;
+    }
   }
 }
 

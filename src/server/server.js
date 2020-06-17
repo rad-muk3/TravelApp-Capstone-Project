@@ -54,6 +54,18 @@ function listening() {
 }
 
 /**
+ *@description GET route so that the posted data
+ *@description can be retrieved back to the frontend
+ *
+ **/
+
+app.get('/all', sendData);
+
+function sendData(request, response) {
+  response.send(projectData);
+}
+
+/**
  * @description POST route
  *
  * @description Add trip-info received from client-side to the projectData object
@@ -73,6 +85,14 @@ app.post('/tripinfo', async (req, res) => {
   res.send({
     status: 'OK'
   })
+})
+
+/**
+ *@description Send a GET request to end point
+ *@description using supertest get method
+ **/
+app.get('/testendpoint', (req, res) => {
+  res.send('OK')
 })
 
 module.exports = app;
