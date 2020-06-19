@@ -17,7 +17,7 @@ const errorMessage = "Error: Please select a date within next 15 days only!";
  **/
 
 const getLocationfromGeoNames = async term => {
-  const request = await fetch(`http://api.geonames.org/searchJSON?q=${term}&maxRows=1&username=rad_muk3`);
+  const request = await fetch(`http://api.geonames.org/searchJSON?q=${term}&maxRows=1&username=${USERNAME}`);
   try {
     const geoLocData = await request.json();
     const {
@@ -39,7 +39,7 @@ const getLocationfromGeoNames = async term => {
  *
  **/
 const getWeatherDetails = async (lat, lon) => {
-  const request = await fetch(`https://api.weatherbit.io/v2.0/forecast/daily?&lat=${lat}&lon=${lon}&key=eb266d467be74f7696ddc1f715a9e60d`);
+  const request = await fetch(`https://api.weatherbit.io/v2.0/forecast/daily?&lat=${lat}&lon=${lon}&key=${WEATHERBITKEY}`);
   try {
     const weatherbitData = await request.json();
     return weatherbitData;
@@ -55,7 +55,7 @@ const getWeatherDetails = async (lat, lon) => {
  **/
 const getPixabayImage = async (pic) => {
   console.log('requesting for pictures from pixabay')
-  const request = await fetch(`https://pixabay.com/api/?q=${pic}&image_type=photo&key=16860825-a16ddbd678c70331b841c97cf`);
+  const request = await fetch(`https://pixabay.com/api/?q=${pic}&image_type=photo&key=${PIXAIMAGEKEY}`);
   try {
     const pixabayData = await request.json();
     const dImgURL = pixabayData.hits['0'].webformatURL;
